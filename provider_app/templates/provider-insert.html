@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Providers</title>
+</head>
+<style>
+    table {
+        border: 8px outset;
+        border-radius: 10px;
+        border-spacing: 10px;
+        padding: 20px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    th,
+    td {
+        padding: 5px;
+    }
+</style>
+
+<body>
+    <h2 style="text-align:center"> Enter Details of Provider </h2>
+    <form method="POST">
+        {% csrf_token %}
+        <table style="width:50%" align="center">            
+            <tr>
+                <td>Category Code</td>
+                <td><input type="text" placeholder="Enter Category Code" name="categorycode" disabled> </td>
+            </tr>
+            <tr>
+                <td>Choose a Category</td>
+                <td>
+                    <select name="categoryname" id="categoryname">
+                    {% for category in categories %}
+                        <option value="{{ category.categorycode }}">{{ category.providercategoryname }}</option>
+                    {% endfor %}
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Provider Name</td>
+                <td><input type="text" placeholder="Enter Provider Name" name="providername"> </td>
+            </tr>
+            <tr>
+                <td>TIN Number</td>
+                <td><input type="text" placeholder="Enter TIN Number" name="tin"> </td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td><input type="text" placeholder="Enter Address" name="address"> </td>
+            </tr>
+            <tr>
+                <td>Location Code</td>
+                <td><input type="text" placeholder="Enter Location Code" name="locationcode"> </td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input type="email" placeholder="Enter Provider Email" name="emailaddress"> </td>
+            </tr>
+            <tr>
+                <td>Contact Person</td>
+                <td><input type="text" placeholder="Enter Contact Person" name="contactperson"> </td>
+            </tr>
+            <tr>
+                <td>Landline</td>
+                <td><input type="text" placeholder="Enter Landline" name="landline"> </td>
+            </tr>
+            <tr>
+                <td>Mobile Number</td>
+                <td><input type="text" placeholder="Enter Mobile Number" name="mobilenumber"> </td>
+            </tr>
+            <tr>
+                <td>Remarks</td>
+                <td><input type="text" placeholder="Enter Remarks" name="remarks"> </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><input type="submit" class="btn btn-success"> </td>
+            </tr>
+        </table>
+
+        <br><br>
+        <div class="alert alert-danger" role="alert">
+            Do you want see Information of Providers?
+        </div>
+
+        <p>
+            <a href="{% url 'provider-show' %}">Go To Providers Information--></a>
+        </p>
+    </form>
+</body>
+
+</html>

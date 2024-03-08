@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plans Information</title>
+</head>
+<style>
+    table {
+        border: 8px outset;
+        border-radius: 10px;
+        border-spacing: 10px;
+        padding: 20px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    th,
+    td {
+        padding: 5px;
+        border: 1px solid;
+    }
+</style>
+
+<body>
+    <h2 style="text-align:center"> Plans Information </h2>
+    <table align="center" style="margin: 0px auto;">
+        <thead>
+            <tr>
+                <th>Plan Code</th>
+                <th>Product</th>
+                <th>Plan Type</th>
+                <th>Room</th>
+                <th>Member Type</th>
+                <th>Age(from)</th>
+                <th>Age(to)</th>
+                <th>Premium</th>
+                <th>Limit</th>
+                <th>Limit Type</th>
+                <th>Access</th>
+                <th>Remarks</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for plan in plans %}
+            <tr>
+                <td>{{plan.plancode}}</td>
+                <td>{{plan.productcode.productname}}</td>
+                <td>{{plan.plantype}}</td>
+                <td>{{plan.roomcode.roomname}}</td>
+                <td>{{plan.membertypecode.membertypename}}</td>
+                <td>{{plan.agefrom}}</td>
+                <td>{{plan.ageto}}</td>
+                <td>{{plan.premiumamount}}</td>
+                <td>{{plan.benefitlimit}}</td>
+                <td>{{plan.limittypecode.limittypename}}</td>
+                <td>{{plan.withaccesstotophospital}}</td>
+                <td>{{product.remarks}}</td>
+                <td>
+                    <a href="edit/{{plan.pk}}">Update</a>
+                </td>
+                <td>
+                    <a href="remove/{{plan.pk}}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <br><br>
+    <div class="alert alert-danger" role="alert">
+        Do you want to enter more Providers?
+    </div>
+
+    <p>
+        <a href="{% url 'plan-insert' %}"><-- Add more Plans?</a><br>
+        <a href="{% url 'products-insert' %}"><-- Add more Products?</a><br>
+        <a href="{% url 'provider-insert' %}"><-- Add more providers?</a><br>
+        <a href="{% url 'provider-categ-show' %}"><-- Go to Category List?</a>
+    </p>
+</body>
+
+</html>

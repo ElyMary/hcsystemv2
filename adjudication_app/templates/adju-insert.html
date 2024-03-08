@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+</style>
+<body>
+<form method="post">
+    {% csrf_token %}
+    <div class="form-control">
+        <div class="row">
+            <table border="2" align="center">
+                <thead>
+                    <tr>
+                        <th>Create Adjudication</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            Record ID:
+                            <input type="text" name="recordnoadju" id="recordnoadju" placeholder="Auto Generated" readonly>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Adjudication Code: 
+                            <input type="text" name="adjudicationcode" id="adjudicationcode">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Provide Code:
+                            <input type="text" name="providercode" id="providercode"> 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Doctor Code:
+                            <input type="text" name="doctorcode" id="doctorcode">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            SOA Number:
+                            <input type="text" name="soanumber" id="soanumber">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            SOA Date:
+                            <input type="date" name="soadate" id="soadate">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Due Date:
+                            <input type="date" name="duedate" id="duedate">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Claims Status:
+                            <select name="claimsstatus" id="claimsstatus">
+                                <option value="claimsstatus">active</option>
+                                <option value="claimsstatus">not active</option>
+                                <option value="claimsstatus">pending</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Remarks:
+                            <input type="form-control" name="remarks" id="remarks">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Transact By:
+                            <select name="transactby" id="transactby">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Transact Date:
+                            <input type="date" name="transactdate" id="transactdate">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Transact Type:
+                            <input type="text" name="transactype" id="transactype">
+                            <input type="submit" value="submit" class="btn btn-success">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</form>
+
+
+</body>
+</html>

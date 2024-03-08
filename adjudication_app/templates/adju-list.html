@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIST OF ADJUDICATION</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <form>
+                <table style="border: 2;" align="center">
+                    <thead>
+                        <tr>
+                            <th>Record ID</th>
+                            <th>Adjudication Code</th>
+                            <th>Provider Code</th>
+                            <th>SOA Number</th>
+                            <th>SOA Date</th>
+                            <th>Due Date</th>
+                            <th>Claims Status</th>
+                            <th>Remarks</th>
+                            <th>Transact By</th>
+                            <th>Transact Date</th>
+                            <th>Transact Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for adjudication in adjudications %}
+                        <td>{{adjudication.recordnoadju}}</td>
+                        <td>{{adjudication.adjudicationcode}}</td>
+                        <td>{{adjudication.providercode}}</td>
+                        <td>{{adjudication.soanumber}}</td>
+                        <td>{{adjudication.soadate}}</td>
+                        <td>{{adjudication.duedate}}</td>
+                        <td>{{adjudication.claimsstatus}}</td>
+                        <td>{{adjudication.remarks}}</td>
+                        <td>{{adjudication.transactby}}</td>
+                        <td>{{adjudication.transactdate}}</td>
+                        <td>{{adjudication.transactype}}</td>
+
+                    </tbody>
+            </table>
+            </form>
+            
+        </div>
+    </div>
+</body>
+</html>
